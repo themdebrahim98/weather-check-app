@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head}}
+
+
+
+<body>
+
+
+   {{>navbar}}
+
+
+   <!-- main-header -->
+   <div class="container-fluid main_header">
+      <div class="row">
+         <div class="col-md-10 col-12 mx-auto">
+
+            <div class="main_content">
+               <form class="temp_form">
+                  <input type="text" id="cityName" placeholder="enter the city name">
+                  <input type="submit" value="search" name="" id="submitBtn">
+               </form>
+
+            </div>
+            <div class="tempInformation">
+               <div class="top_layer">
+                  <p id="day">Tuesday</p>
+                  <p id="today_data">13</p>
+               </div>
+               <div class="main_layer">
+                  <p id="city_name">
+                     get output here
+                  </p>
+
+                  <div class="middle_layer data_hide">
+                     <p id="temp">
+                        <span class="temp_real_val">0</span><sup>0</sup>C
+                     </p>
+                     <p id="temp_status"> <i class="fa fa-cloud" aria-hidden="true"></i>
+                     </p>
+
+                  </div>
+
+               </div>
+            </div>
+         </div>
+
+
+      </div>
+   </div>
+   </div>
+   <!-- fotter -->
+   <footer>
+      <p>fotter</p>
+   </footer>
+
+
+   <script src="js/main.js"></script>
+   <script>
+
+      function getday() {
+         const day = document.getElementById('day');
+         const today_data = document.getElementById('today_data');
+
+
+
+
+         let currentdays = [
+            'sunday',
+            'monday',
+            'tuesday',
+            'wednesday',
+            'thursday',
+            'friday',
+            'saturday',
+
+
+         ];
+
+         const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+         let days = new Date().getDay();
+         let dates = new Date().getDate();
+         let months =  month[new Date().getMonth()];
+
+         
+
+         day.innerText = currentdays[days];
+
+         today_data.innerHTML = `${dates} ${months} `;
+
+         console.log(days)
+
+      }
+
+
+      getday()
+
+
+   </script>
+</body>
+
+</html>
